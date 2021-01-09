@@ -5,8 +5,14 @@ import movieData from './data.js'
 export default class MovieShowcase extends Component {
 
   generateMovieCards = () => {
-    return movieData.map(item => <li>{item}</li>)
-  }
+    return movieData.map((movie, index) => <MovieCard
+		      key={index}
+		      title={movie.title}
+		      IMDBRating={movie.IMDBRating}
+		      genres={movie.genres}
+		      poster={movie.poster}
+		    />)
+      }
 
   render() {
     return (
